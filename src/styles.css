@@ -1,0 +1,429 @@
+/* ==========================================================================
+   MedChamber Pro - Clean, High-Contrast Clinical Design System
+   Handcrafted, Simple, and Readable Code
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Theme Colors */
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-light: #f0f9ff;
+  --primary-gradient: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+  --hero-gradient: linear-gradient(135deg, #0c4a6e 0%, #0f172a 50%, #134e4a 100%);
+
+  /* Neutrals: Clean, High-Contrast Light Theme */
+  --bg-app: #f4f6fb;
+  --surface-card: #ffffff;
+  --border-color: #e2e8f0;
+  --border-focus: #0284c7;
+  
+  /* Text Colors (High Contrast WCAG AAA) */
+  --text-main: #0f172a;       /* Deep slate/navy: 100% readable on light backgrounds */
+  --text-secondary: #334155;  /* Slate body text */
+  --text-muted: #64748b;      /* Subtle labels */
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.app-body {
+  font-family: var(--font-family);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+code, kbd, samp, pre, .font-monospace {
+  font-family: var(--font-mono) !important;
+}
+
+/* ==========================================================================
+   Form Controls (Explicit Background & Text - Never White-on-White or Black-on-Black)
+   ========================================================================== */
+.form-label {
+  color: #0f172a !important;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  margin-bottom: 0.35rem;
+}
+
+.form-control,
+.form-select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+}
+
+.form-control::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   Header & Navbar (Clean Dark Indigo with Clear White Text)
+   ========================================================================== */
+.app-navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.glass-nav {
+  background: #0f172a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.brand-logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+}
+
+.brand-name {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.badge-brand-version {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+}
+
+/* ==========================================================================
+   Status & Triage Badges (High Contrast Pairings)
+   ========================================================================== */
+.badge-status-waiting {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fde68a !important;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+}
+
+.badge-status-consultation {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  border: 1px solid #bae6fd !important;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+}
+
+.badge-status-completed {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border: 1px solid #a7f3d0 !important;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+}
+
+.badge-status-critical {
+  background-color: #ffe4e6 !important;
+  color: #9f1239 !important;
+  border: 1px solid #fecdd3 !important;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+}
+
+.blood-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  background-color: #ffe4e6 !important;
+  color: #9f1239 !important;
+  border: 1px solid #fecdd3 !important;
+}
+
+/* Pulse Indicator */
+.pulse-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse-ring 2s infinite;
+}
+
+.pulse-indicator.emergency {
+  background-color: #e11d48;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+  100% { transform: scale(0.95); opacity: 1; }
+}
+
+/* ==========================================================================
+   Modals (Pure White Card Background, Deep Dark Slate Text)
+   ========================================================================== */
+.modal-backdrop-blur {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.modal-drawer-card,
+.modal-card,
+.modal-prescription-card {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.2), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.15s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Comprehensive Print Styles for Doctor's Prescription Slips
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  *, *:before, *:after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html, body, body.app-body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide app header, footer, main dashboard, other modals, toasts */
+  header,
+  footer,
+  .app-header,
+  .app-footer,
+  .dashboard-wrapper,
+  .no-print,
+  .prescription-top-actions,
+  .btn-close-modal,
+  app-stats-cards,
+  app-filter-bar,
+  app-patient-table,
+  app-patient-grid,
+  app-patient-form-modal,
+  app-confirm-modal,
+  app-toast-container {
+    display: none !important;
+  }
+
+  /* Unset fixed modal backdrop for print */
+  .modal-backdrop-blur {
+    position: static !important;
+    inset: auto !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+    width: 100% !important;
+    z-index: auto !important;
+  }
+
+  /* Expand prescription card to full page width & height */
+  .modal-prescription-card {
+    position: static !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* Prescription Document Container */
+  .prescription-document {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Emblem / Logo in print */
+  .chamber-emblem {
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Metadata banner */
+  .patient-meta-banner {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    padding: 0.75rem !important;
+    margin-bottom: 1rem !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Health Check Bar */
+  .vitals-dashboard-row {
+    background: #f0fdfa !important;
+    border: 1px solid #99f6e4 !important;
+    border-radius: 6px !important;
+    padding: 0.75rem !important;
+    margin-bottom: 1rem !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Clinical Box */
+  .clinical-box {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    padding: 0.75rem !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Prescription Table in Print */
+  .prescription-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: 1.5px solid #334155 !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .prescription-table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    border: 1px solid #94a3b8 !important;
+    padding: 6px 8px !important;
+    font-size: 9pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .prescription-table td {
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    padding: 6px 8px !important;
+    font-size: 9.5pt !important;
+    background: #ffffff !important;
+  }
+
+  /* Doctor signature area */
+  .signature-line {
+    border-bottom: 2px solid #000000 !important;
+    display: inline-block !important;
+    min-width: 200px !important;
+  }
+
+  /* Page Break Control */
+  .prescription-document > div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .prescription-rx-section {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .prescription-table tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

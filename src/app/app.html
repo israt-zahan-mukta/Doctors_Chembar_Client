@@ -1,0 +1,67 @@
+<!-- Classic 2015-Era Navbar with Simple Navigation Tabs -->
+<header class="app-header shadow-sm no-print">
+  <nav class="navbar navbar-expand-md navbar-dark bg-classic-navy py-2 px-3 px-lg-4">
+    <div class="container-xl d-flex align-items-center justify-content-between">
+      
+      <!-- Brand Logo & Name -->
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white text-decoration-none" href="#">
+        <i class="bi bi-hospital fs-4 text-info"></i>
+        <div class="d-flex flex-column" style="line-height: 1.15;">
+          <span class="fw-bold fs-5">Doctor's Chamber</span>
+          <span class="text-white-50" style="font-size: 0.72rem;">Patient Care & Chamber System</span>
+        </div>
+      </a>
+
+      <!-- Simple 2015-Era Color Tabs -->
+      <ul class="nav nav-pills gap-1 align-items-center mb-0">
+        <li class="nav-item">
+          <a
+            class="nav-link nav-tab-link active"
+            href="#"
+            (click)="$event.preventDefault()"
+          >
+            <i class="bi bi-person-lines-fill me-1"></i>
+            <span>Patient List</span>
+            <span class="badge bg-white text-dark ms-1.5">{{ store.patients().length }}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-tab-link tab-green"
+            href="#"
+            (click)="$event.preventDefault(); store.openCreateForm()"
+          >
+            <i class="bi bi-person-plus-fill me-1"></i>
+            <span>+ Register Patient</span>
+          </a>
+        </li>
+        <li class="nav-item d-none d-sm-block">
+          <a
+            class="nav-link nav-tab-link tab-gray"
+            href="#"
+            (click)="$event.preventDefault(); store.resetSeedData()"
+            title="Reset default demonstration records"
+          >
+            <i class="bi bi-arrow-clockwise me-1"></i>
+            <span>Reset Demo</span>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+<!-- Main App Content -->
+<main class="app-main-content py-3">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Simple 2015-Era Footer -->
+<footer class="app-footer py-3 text-center text-muted small border-top bg-white no-print">
+  <div class="container-xl">
+    <span>
+      &copy; 2015-2026 <strong>Doctor's Chamber Management</strong> &bull; Patient Records, Clinical Vitals & Prescriptions
+    </span>
+  </div>
+</footer>
